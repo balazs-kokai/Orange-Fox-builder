@@ -67,6 +67,11 @@ jobs:
 
     - name: Prepare the build environment
       run: |
+        echo "Doing some stuffs"
+        sudo apt-mark hold grub-efi-amd64-signed
+        sudo apt-get update --fix-missing
+        sudo apt-get upgrade
+        echo "end of doing somestuffs"
         sudo apt install git aria2 -y
         git clone https://gitlab.com/OrangeFox/misc/scripts
         cd scripts
