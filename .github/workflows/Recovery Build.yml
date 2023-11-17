@@ -110,6 +110,7 @@ jobs:
 
     - name: Building recovery
       run: |
+        export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         set +e
         source build/envsetup.sh
